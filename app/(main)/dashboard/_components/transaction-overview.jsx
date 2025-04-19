@@ -112,12 +112,13 @@ const DashboardOverview = ({ accounts, transactions }) => {
               ):(
                 recentTransactions.map((transaction) => (
                   <div
+                    key={transaction.id}
                     className="flex items-center justify-between"
                   >
                     <div className="space-y-1">
                       <p className="text-sm font-medium leading-none">
                         {transaction.description || "Untitled Transaction"}
-                      </p>
+                      </p>  
                       <p className="text-sm text-muted-foreground">
                         {format(new Date(transaction.date), "PP")}
                       </p>
